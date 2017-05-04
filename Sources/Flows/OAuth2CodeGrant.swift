@@ -90,7 +90,7 @@ open class OAuth2CodeGrant: OAuth2 {
 	
 	Uses `accessTokenRequest(params:)` to create the request, which you can subclass to change implementation specifics.
 	*/
-	public func exchangeCodeForToken(_ code: String) {
+	open func exchangeCodeForToken(_ code: String) {
 		do {
 			guard !code.isEmpty else {
 				throw OAuth2Error.prerequisiteFailed("I don't have a code to exchange, let the user authorize first")
